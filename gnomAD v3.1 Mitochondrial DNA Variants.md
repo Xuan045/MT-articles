@@ -10,7 +10,7 @@ gnomAD自v3.1版本開始提供粒線體DNA (mitochondrial DNA, mtDNA) 的變異
 
 在過去的版本中並沒有包含粒線體DNA變異位點的資料，是因為粒線體DNA的某些特性並不符合進行nuclear DNA變異位點偵測時所使用的假設，這些獨特的特性包含：
 
-- 粒線體基因體為環型 (circular genome)：在進行reads alignment時，會使用線型的參考序列，但因為粒線體DNA為環狀結構，所以製作粒線體參考序列時會在原點製造出一個斷點。而在進行alignment時如果有橫跨在斷點上的reads就會造成問題。
+- 粒線體基因體為環型 (circular genome)：在進行reads alignment時，會使用線型的參考序列，但因為粒線體DNA為環狀結構，所以製作粒線體參考序列時會在原點製造出一個斷點。而在進行alignment時如果有橫跨在斷點上的reads就會組裝上的問題。
 - Heteroplasmy: 在一個細胞中會有數百到數千個粒線體DNA copies，多數的變異都是屬於homoplasmic (一個細胞內所有mtDNA copies都帶有一樣的變異)。然後也有些變異點是heteroplasmic (在一個細胞中只有部分的mtDNA帶有變異)，當這些heteroplasmic variants存在的比例很低時，就會造成偵測上的困難，且必須小心的區分這些variants是真的存在比例很低，抑或是因為technical artifacts或污染而造成。
 - Nuclear sequences of mitochondrial origin, NUMTs: NUMTs是在nuclear genome中，源自於粒線體DNA的片段，原因是在演化的過程中，有粒線體的片段進入核，並嵌入nuclear genome中。有許多的NUMTs存在於參考序列中，然而，也有部分polymorphic NUMTs只存在於部分人當中，這些屬於NUMTs的reads很容易錯誤的拼在粒線體DNA上，並且造成low heteroplasmy的偽陽性結果。相反地，如果是粒線體的reads拼在參考序列上的NUMTs上，則會造成偽陰性的狀況。
 
