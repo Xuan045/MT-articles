@@ -42,7 +42,7 @@ gnomAD團隊調整了GATK MuTect2，設計出專門偵測粒線體變異的模�
 
 # 補充說明
 
-<p id="s1">1. MuTect2原先用作腫瘤中的變異偵測 (somatic variants)，因為粒線體的變異與腫瘤的特性有些許類似，同樣的位點，可能只有少部分的reads才帶有變異，所以gnomAD針對粒線體特性：很高的coverage、很低的heteroplasmy level，進一步調整參數，使用mitochondria mode來專門偵測。</p>
+<p id="s1">1. MuTect2原先用作腫瘤中的變異偵測 (somatic variants)，因為粒線體的變異與腫瘤的特性有些許類似，同樣的位點，可能只有少部分的reads才帶有變異，所以gnomAD額外針對粒線體特性，包括很高的coverage、很低的heteroplasmy level，進一步調整參數，設計出mitochondria mode來專門偵測粒線體DNA的變異。</p>
 
 # 相關資源
 
